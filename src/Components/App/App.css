@@ -1,0 +1,89 @@
+.app {
+    
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #C20046;
+    /* background-color: black; */
+    
+    box-sizing: border-box;
+}
+
+input[type="text"]{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00C20F;
+    background: none;
+    color: #00C20F;
+    padding: 0.1em;
+    font-size: 1.2em;
+    width: 90%;
+    margin: 2px 5px;
+}
+
+.header {
+    height: 100%;
+    font-family: 'Spicy Rice', serif;
+    font-size: 3.5rem;
+    color: #FF0088;
+    letter-spacing: 0.2em;
+    
+}
+.mmm {
+    color: #0FFF00;
+}
+
+.resultsContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin-top: 1em; */
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    height: 700px;
+    background-color: aliceblue;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0FFF00;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #C20046;
+}
+
+
+.newplaylist {
+    margin-left: 2em;
+}
+
+button {
+    cursor: pointer;
+    background-color: #00C20F;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin: 10px;
+    box-sizing: border-box;
+}

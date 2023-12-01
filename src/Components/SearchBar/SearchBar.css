@@ -1,0 +1,7 @@
+.searchBar {
+    box-sizing: border-box;
+    position: sticky;
+    top: 10px;
+    z-index: 1;
+}
+
