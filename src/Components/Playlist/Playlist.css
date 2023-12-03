@@ -1,5 +1,9 @@
 .playlistName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Add padding for better spacing */
     position: sticky;
-    top: 10px;
+    top: 0px;
     z-index: 1;
 }

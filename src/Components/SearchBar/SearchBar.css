@@ -1,7 +1,11 @@
 .searchBar {
-    box-sizing: border-box;
-    position: sticky;
-    top: 10px;
-    z-index: 1;
-}
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Add space between items */
+    padding: 10px; /* Add padding for better spacing */
+    align-items: center;
+  }
 
+.searchButton {
+    box-sizing: border-box;
+    width: 25%;
+}
