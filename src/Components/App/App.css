@@ -6,8 +6,9 @@
     justify-content: space-around;
     align-items: center;
     color: #C20046;
-    /* background-color: black; */
-    
+    background-color: rgba(0, 22, 4, 0.671); 
+    width: 100%;
+
     box-sizing: border-box;
 }
 
@@ -19,8 +20,9 @@ input[type="text"]{
     color: #00C20F;
     padding: 0.1em;
     font-size: 1.2em;
-    width: 90%;
+    width: 70%;
     margin: 2px 5px;
+    
 }
 
 .header {
@@ -43,20 +45,34 @@ input[type="text"]{
     /* margin-top: 1em; */
 }
 
+.searchBox {
+    
+        box-sizing: border-box;
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        
+        
+        
+    
+}
+
 .list {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 30%;
-    height: 700px;
+    width: 40%;
+    height: 35em;
     background-color: aliceblue;
     overflow-y: scroll;
     overflow-x: hidden;
     border-radius: 5px;
+    margin: 4em;
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 6px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar-track {
@@ -67,7 +83,7 @@ input[type="text"]{
     background-color: #0FFF00;
     border-radius: 20px;
     border: 6px solid transparent;
-    background-clip: content-box;
+    /* background-clip: content-box; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
