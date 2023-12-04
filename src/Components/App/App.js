@@ -3,7 +3,8 @@ import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
-
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 import Spotify from "../../Spotify/Spotify";
 
@@ -74,23 +75,25 @@ debugger;
   }
 
   return (
-    <div className="app">
-      <div className="header">
-        <h1>Ja<span className="mmm">mmm</span>ing</h1>
-        
+    <DndProvider backend={HTML5Backend}>
+      <div className="app">
+        <div className="header">
+          <h1>Ja<span className="mmm">mmm</span>ing</h1>
+      
+        </div>
+        <div className="resultsContainer">
+          <div className="search list">
+          <div className ="searchBox">
+            <SearchBar onSearch={search} />
+          </div>
+          <SearchResults searchResults={searchResults} addTrack={addTrack} />
+          </div>
+          <div class="newplaylist list">
+            <Playlist addTrack={addTrack} handleNameChange={handleNameChange} playlistName={playlistName} playlistTracks={playlistTracks} removeTrack={removeTrack} onSave={savePlaylistToSpotify}/>
+          </div>
+        </div>
       </div>
-      <div className="resultsContainer">
-        <div className="search list">
-        <div className ="searchBox">
-          <SearchBar onSearch={search} />
-        </div>
-        <SearchResults searchResults={searchResults} addTrack={addTrack} />
-        </div>
-        <div class="newplaylist list">
-          <Playlist handleNameChange={handleNameChange} playlistName={playlistName} playlistTracks={playlistTracks} removeTrack={removeTrack} onSave={savePlaylistToSpotify}/>
-        </div>
-      </div>
-    </div>
+    </DndProvider>
   );
 }
 
