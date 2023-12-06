@@ -1,9 +1,90 @@
 .playlistName {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px; /* Add padding for better spacing */
     position: sticky;
     top: 0px;
     z-index: 1;
 }
+
+.input-container {
+    position: relative;
+    
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    background-color: white;
+}
+
+.clearButton,
+.saveBtn {
+    margin: 5px;
+    right: 15px; /* Adjust the right position as needed */
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.clearButton {
+    color: red;
+}
+
+.saveBtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(48, 45, 45, 0.199);
+    background-color: rgb(255, 65, 65);
+
+    transition-duration: .3s;
+
+  }
+
+  .playlistIcon {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .playlistText {
+
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition-duration: .3s;
+  }
+
+  .saveBtn:hover {
+    width: 100px;
+    border-radius: 5px;
+    transition-duration: .3s;
+  }
+  
+  .saveBtn:hover .playlistIcon {
+
+    transition-duration: .3s;
+  
+  }
+  /* hover effect button's text */
+  .saveBtn:hover .playlistText {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .saveBtn:active {
+    transform: translate(2px ,2px);
+  }

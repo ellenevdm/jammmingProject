@@ -1,60 +1,71 @@
+
+
 .app {
-    
-    font-family:'Times New Roman', Times, serif;
+
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     color: #C20046;
-    background-color: rgba(0, 22, 4, 0.671); 
-    width: 100%;
-
+    margin: 0;
     box-sizing: border-box;
+    width: 100%;
+    /* Adjust the width to your preference */
+    height: 100%;
+    /* Adjust the height to your preference */
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(214, 214, 214, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
 }
 
-input[type="text"]{
+input[type="text"] {
+    /* width: 100%; */
     border: none;
-    outline: none;
-    border-bottom: 2px solid #00C20F;
-    background: none;
-    color: #00C20F;
-    padding: 0.1em;
-    font-size: 1.2em;
-    width: 70%;
-    margin: 2px 5px;
-    
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1;
+    height: 50px;
+    background-color: transparent;
 }
+
 
 .header {
-    height: 100%;
+
     font-family: 'Spicy Rice', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #FF0088;
     letter-spacing: 0.2em;
-    
+    height: 3.8em;
+
 }
+
 .mmm {
     color: #0FFF00;
 }
 
 .resultsContainer {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100%;
     /* margin-top: 1em; */
 }
 
 .searchBox {
-    
-        box-sizing: border-box;
-        position: sticky;
-        top: 0px;
-        z-index: 1;
-        
-        
-        
-    
+
+    box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
+
+
+
 }
 
 .list {
@@ -62,12 +73,12 @@ input[type="text"]{
     flex-direction: column;
     text-align: center;
     width: 40%;
-    height: 35em;
-    background-color: aliceblue;
+    height: 38em;
     overflow-y: scroll;
     overflow-x: hidden;
-    border-radius: 5px;
-    margin: 4em;
+    margin: 2em auto;
+    box-sizing: border-box;
+
 }
 
 ::-webkit-scrollbar {
@@ -97,9 +108,9 @@ input[type="text"]{
 
 button {
     cursor: pointer;
-    background-color: #00C20F;
+    /* background-color: #00C20F;
     border-radius: 15px;
     padding: 0.5em;
     margin: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }

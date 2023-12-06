@@ -1,8 +1,8 @@
 import React from "react";
 import "./Track.css";
 // import ReactDOM from 'react-dom'
-import { CgAddR } from "react-icons/cg";
-import { CgRemoveR } from "react-icons/cg";
+import { FiPlusSquare } from "react-icons/fi";
+import { FiMinusSquare } from "react-icons/fi";
 import { useDrag } from "react-dnd";
 
 export default function Track(props) {
@@ -26,13 +26,13 @@ export default function Track(props) {
   if (props.addTrack) {
     button = (
       <button onClick={handleClick}>
-        <CgAddR />
+        <FiPlusSquare />
       </button>
     );
   } else {
     button = (
       <button onClick={handleClick}>
-        <CgRemoveR />
+        <FiMinusSquare />
       </button>
     );
   }

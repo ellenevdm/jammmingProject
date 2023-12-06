@@ -66,8 +66,7 @@ function App() {
   }
 
   const savePlaylistToSpotify = () => {
-    const trackUris = playlistTracks.map((track) => track.uri)
-debugger;
+    const trackUris = playlistTracks.map((track) => track.uri);
     if(Spotify.savePlaylist(token,playlistName, trackUris)){    
       setPlaylistName('')
       setPlaylistTracks([])
@@ -88,7 +87,7 @@ debugger;
           </div>
           <SearchResults searchResults={searchResults} addTrack={addTrack} />
           </div>
-          <div class="newplaylist list">
+          <div className="newplaylist list">
             <Playlist addTrack={addTrack} handleNameChange={handleNameChange} playlistName={playlistName} playlistTracks={playlistTracks} removeTrack={removeTrack} onSave={savePlaylistToSpotify}/>
           </div>
         </div>
