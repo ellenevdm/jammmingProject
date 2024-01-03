@@ -2,23 +2,31 @@ import React, { useState } from "react";
 import "./Playlist.css";
 import Tracklist from "../Tracklist/Tracklist";
 import { useDrop } from "react-dnd";
-
-import { FaSpotify } from "react-icons/fa";
 import { MdClear } from "react-icons/md";
-import IconPlaylistStar from "../../SVGs/saveIcon";
+import { MdSaveAlt } from "react-icons/md";
 
 export default function Playlist(props) {
-  const [isTyping, setIsTyping] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false)
+  const [isTyping, setIsTyping] = useState(false); 
 
   const [{ isOver }, drop] = useDrop({
     accept: "TRACK",
-    drop: (item) => {
-      props.addTrack(item.track);
+    drop: (item, monitor) => {
+      const didDrop=monitor.didDrop
+      if(!didDrop) {
+        props.removeTrack(item.track)
+      } else{
+      props.addTrack(item.track)
+    }
     },
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
   });
+
+
+
+  
 
   const handleInputChange = (event) => {
     props.handleNameChange(event);
@@ -36,15 +44,26 @@ export default function Playlist(props) {
     props.handleNameChange({ target: { value: "" } });
   };
 
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+  
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
+  };
+  
+
   return (
     <div ref={drop} className={`playlist ${isOver ? "dragging-over" : ""}`}>
       <div className="playlistName input-container">
-        <div className="input-wrapper">
+        <div className={`input-wrapper ${isInputFocused ? 'active' : ''}`}>
           <input
             type="text"
             placeholder="New Playlist"
             value={props.playlistName}
             onChange={handleInputChange}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
           />
 
           {isTyping && props.playlistName.trim() !== "" && (
@@ -53,18 +72,25 @@ export default function Playlist(props) {
             </button>
           )}
 
-          <button className="saveBtn" onClick={handleSubmit}>
-            <div className="playlistIcon">
-              <IconPlaylistStar />
+          <button className="sBtn" onClick={handleSubmit}>
+            <div className="sIcon">
+            <MdSaveAlt />
             </div>
-            <div className="playlistText">Save</div>
+            <div className="sText">Save</div>
           </button>
         </div>
       </div>
-      <Tracklist
-        tracks={props.playlistTracks}
-        removeTrack={props.removeTrack}
-      />
+
+      <div className="list">
+
+        <Tracklist
+          tracks={props.playlistTracks}
+          removeTrack={props.removeTrack}
+          offset={1}
+        />
+        
+      </div>
+      
     </div>
   );
 }

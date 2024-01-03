@@ -1,31 +1,70 @@
 .track {
-    border: 1px solid white;
+    box-sizing: border-box;
+    border: 2px solid #2B2B2B;
     background-color: rgba(255, 255, 255, 0.637);
     display: flex;
-    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 0.5em;
-    backdrop-filter: blur(8px);
-    box-sizing: border-box;
+    width: 98%;
+    flex: 1;
     text-align: left;
+    overflow: hidden;
+    margin: 0.2em 0 0.2em 0.2em; /* Adjust top and bottom margins */
+    padding: 0.2em;  /* Adjust padding */
+    border-radius: 3px;
 }
 
-/* .trackbutton button:hover{
-    background-color: blue;
-    
-} */
 
-.track.even{
-    background-color: #FF99CC;
+/* Rest of your CSS remains unchanged */
+
+
+.track.even {
+    background-color: #15da5a91;
+    color:#000
 }
+
 .track.odd {
-    background-color: #00FF66;
+    background-color: hsla(300, 100%, 50%, 0.568);
+    color:#000
 }
 
 .trackbutton button {
     background-color: transparent;
     font-size: 1.5em;
     border: none;
+}
+
+.trackInfo {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    flex: 1;
+    margin: auto;
+    
+}
+
+.trackInfo h4 {
+    margin: 0;
+    overflow: hidden; /* added overflow to prevent text overflow */
+    text-overflow: ellipsis; /* added text-overflow to show ellipsis for overflowed text */
+    white-space: nowrap; /* added white-space to prevent line breaks */
+    font-size: 1.1em;
+}
+
+.trackInfo div {
+    margin: 0;
+    overflow: hidden; /* added overflow to prevent text overflow */
+    text-overflow: ellipsis; /* added text-overflow to show ellipsis for overflowed text */
+    white-space: nowrap; /* added white-space to prevent line breaks */
+}
+
+.track.dragging  {
+    border: 5px solid white;
 }

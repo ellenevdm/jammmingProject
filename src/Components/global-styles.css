@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+.input-container {
+    display: flex;
+    flex: 1;
+    background: #414141;
+    padding: 0.7em;
+    height: 4em;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    background: #363636;
+    padding: 0.5em 0.2em 0.5em 0.2em;
+    border-radius: 10px;
+    align-items: center;
+  height: 110%;
+}
+
+.clearButton,
+.sBtn {
+    margin: 5px;
+    right: 15px; /* Adjust the right position as needed */
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+.clearButton {
+    color: red;
+}
+
+.sBtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 34px;
+    height: 34px;
+    color: #E3E4F0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(48, 45, 45, 0.199);
+    background-color: #FF00FF;
+
+    
+
+  }
+
+  .sIcon {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+
+  }
+
+  .sText {
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition-duration: .3s;
+    }
+
+    .sBtn:hover {
+        width: 100px;
+        border-radius: 20px;
+        transition-duration: .3s;
+        background-color: #1DB954;
+        color: white;
+      }
+      
+      .sBtn:hover .sIcon {
+    
+        transition-duration: .3s;
+      
+      }
+      /* hover effect button's text */
+      .sBtn:hover .sText {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+        color: white;
+      }
+      /* button click effect*/
+      .sBtn:active {
+        background-color: #FF00FF;
+      }
+
+
+
+input[type="text"] {
+    /* width: 100%; */
+    border: none;
+
+    padding: 15px;
+    flex: 1;
+    height: 50px;
+ background-color: transparent;
+ font-size: 1.2em;
+ color: white;
+}
+
+input[type="text"]:focus {
+  /* width: 100%; */
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #E3E4F0; /* Set the desired color for the placeholder */
+}
+
+.input-wrapper.active {
+  background-color: rgb(97, 97, 97);
+}
+
+.input-wrapper.active .clearButton,
+.input-wrapper.active .sBtn {
+}
+
+.input-wrapper.active .clearButton {
+}
+
+.input-wrapper.active .sBtn {
+}
+
+.input-wrapper.active .sIcon {
+}
+
+.input-wrapper.active .sText {
+}
+
+.input-wrapper.active .sBtn:hover {
+}
+
+.input-wrapper.active .sBtn:hover .sIcon {
+}
+
+.input-wrapper.active .sBtn:hover .sText {
+}
+
+.input-wrapper.active .sBtn:active {
+}
+

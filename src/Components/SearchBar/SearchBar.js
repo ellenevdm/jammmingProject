@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
-
+import { MdOutlineSearch } from "react-icons/md";
 import { MdClear } from "react-icons/md";
 
 
-import IconBxSearch from "../../SVGs/searchIcon";
+
 
 export default function SearchBar(props) {
+  const [isInputFocused, setIsInputFocused] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-
+  
+  
   const searchTermChange = (e) => {
     setSearchTerm(e.target.value);
     setIsTyping(!!e.target.value); // Set isTyping to true if there is input, otherwise false
@@ -29,11 +31,21 @@ export default function SearchBar(props) {
     setSearchTerm('')
   }
 
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+  
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
+  };
+  
+
+
 
   return (
     <div className="searchBar">
       <div className="input-container">
-        <div className="input-wrapper">
+        <div className={`input-wrapper ${isInputFocused ? 'active' : ''}`}>
 
           <input
             type="text"
@@ -41,6 +53,9 @@ export default function SearchBar(props) {
             value={searchTerm}
             onChange={searchTermChange}
             onKeyDown={handleKeyPress}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            
           />
 
           {isTyping && searchTerm.trim() !== "" && (
@@ -49,13 +64,11 @@ export default function SearchBar(props) {
           </button>
           )}
 
-          <button onClick={handleSearch} className="searchBtn">
-            <div className="srchIcon">
-              <IconBxSearch />
-
+          <button onClick={handleSearch} className="sBtn">
+            <div className="sIcon">
+              <MdOutlineSearch />
             </div>
-
-
+            <div className="sText">Search</div>
           </button>
         </div>
       </div>

@@ -1,3 +1,4 @@
+// SearchResults.js
 import React from "react";
 import Tracklist from "../Tracklist/Tracklist";
 import "./SearchResults.css";
@@ -17,9 +18,13 @@ export default function SearchResults(props) {
   return (
     <div
       ref={drop}
-      className={`searchResults ${isOver ? "dragging-over" : ""}`}
+      className={`searchResults list ${isOver ? "dragging-over" : ""}`}
     >
-      <Tracklist tracks={props.searchResults} addTrack={props.addTrack} />
+      <Tracklist
+        tracks={props.searchResults}
+        addTrack={props.addTrack}
+        
+      />
     </div>
   );
 }

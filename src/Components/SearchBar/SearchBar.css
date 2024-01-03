@@ -1,75 +1,14 @@
+@import url(../global-styles.css);
+
+
+
 .searchBar {
     display: flex; /* Use flexbox to align items horizontally */
+
   }
 
-.input-container {
-  position: relative;
-  flex: 1;
-}
-
-.input-wrapper {
-  position: relative;
-  display: flex;
-  background-color: white;
-  /* padding: 5px; */
-}
-
-.clearButton,
-.searchBtn {
 
 
-  margin: 5px;
-  right: 15px; /* Adjust the right position as needed */
-  border: none;
-  background: none;
-  cursor: pointer;
-  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199); */
-}
-
-.clearButton {
-color: red;
-
-}
-
-.searchBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none; 
-  border-radius: 5px;
-
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(255, 65, 65);
-}
-
-
-
-.srchIcon { 
-  /* width: 100%; */
-  transition-duration: .3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.searchBtn:hover {
-  background-color: black;
-  transition-duration: .2s;
-}
-
-.searchBtn:hover .srchIcon {
-
-  transition-duration: .2s;
-
-}
-
-
-.searchBtn:active {
-  transform: translate(2px ,2px);
-}
 
 
 
