@@ -6,7 +6,7 @@ const Spotify = {
 		const [expiresIn, setExpiresIn] = useState(0);
 
 		const initiateAuth = () => {
-			let clientId = "daf9dec000644bca9a07a7a7b3d937c9";
+			let clientId = process.env.REACT_APP_NOT_SECRET_CODE;
 			const redirectUri = "https://evdmjammmingapp.netlify.app/";
 			window.location = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
 		};
